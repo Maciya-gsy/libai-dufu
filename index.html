@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>诗成双曜 · 李白与杜甫的诗语对读</title>
+<meta name="description" content="以李白 1,073 首、杜甫 1,409 首诗作为底本，从字频、意象、句式节奏与诗语重合四个维度，做一次安静的数字人文对读。">
+<meta name="author" content="数字人文 · 诗语对读">
+<meta property="og:title" content="诗成双曜 · 李白与杜甫的诗语对读">
+<meta property="og:description" content="李杜文章在，光焰万丈长。以数据摊平两座唐诗高峰的字、句、意象与相逢。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='4' fill='%239b2f26'/%3E%3Ctext x='32' y='43' font-family='serif' font-size='34' fill='%23fff3e6' text-anchor='middle'%3E诗%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="juan-nav" id="juanNav" aria-label="章节导览">
+  <a href="#preface"><span>序</span><i></i></a>
+  <a href="#measure"><span>量</span><i></i></a>
+  <a href="#characters"><span>字</span><i></i></a>
+  <a href="#imagery"><span>象</span><i></i></a>
+  <a href="#meter"><span>律</span><i></i></a>
+  <a href="#encounter"><span>逢</span><i></i></a>
+  <a href="#reading"><span>对</span><i></i></a>
+  <a href="#search"><span>检</span><i></i></a>
+</nav>
+
+<!-- ============================================================ 首屏 -->
+<header class="hero">
+  <div class="hero-art"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">数 字 人 文 · 唐 诗 对 读</p>
+    <h1 class="hero-title">
+      <span class="v-title">诗成</span><span class="v-title">双曜</span>
+    </h1>
+    <p class="hero-sub">李白与杜甫 · 三万四千行诗句里的<em>两座高峰</em></p>
+    <blockquote class="hero-quote">
+      李杜文章在，光焰万丈长。
+      <cite>—— 韩愈《调张籍》</cite>
+    </blockquote>
+  </div>
+  <div class="scroll-hint">展 卷</div>
+</header>
+
+<!-- ============================================================ 卷一 序 -->
+<section class="chapter" id="preface">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">卷一</span>
+      <div class="chapter-title-block">
+        <h2 class="chapter-title">序</h2>
+        <div class="chapter-title-line"></div>
+      </div>
+      <p class="chapter-lead">
+        两份分句表、一份句对表——这里没有诗话，只有被摊平的字。<br>
+        我们把李白的 <span class="num">1,073</span> 首与杜甫的 <span class="num">1,409</span> 首诗，
+        逐句拆成可数的单位，看两座相邻的山，山势究竟哪里不同。
+      </p>
+    </div>
+
+    <div class="preface-grid">
+      <article class="portrait paper-card reveal">
+        <div class="p-img"><img src="assets/img/libai.jpg" alt="李白月下举杯的水墨立轴" loading="lazy"></div>
+        <div class="p-body">
+          <h3 class="p-name">李白</h3>
+          <div>
+            <div class="p-meta">字太白 · 号青莲居士<br>701—762</div>
+            <p class="p-quote">举杯邀明月，对影成三人。
+              <cite>《月下独酌》</cite>
+            </p>
+          </div>
+        </div>
+      </article>
+      <article class="portrait paper-card reveal d1">
+        <div class="p-img"><img src="assets/img/dufu.jpg" alt="杜甫江畔独立的水墨立轴" loading="lazy"></div>
+        <div class="p-body">
+          <h3 class="p-name">杜甫</h3>
+          <div>
+            <div class="p-meta">字子美 · 自号少陵野老<br>712—770</div>
+            <p class="p-quote">无边落木萧萧下，不尽长江滚滚来。
+              <cite>《登高》</cite>
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="preface-text reveal" style="margin-top:clamp(40px,6vw,72px)">
+      <p>「李杜」并称千年，读者惯于把他们放在同一副天平上。可是文学史上的高下之争，多半靠印象与偏爱裁决；而印象之外，诗是可以用另一种方式被看见的——数一数他写了多少句五言，数一数「月」出现过几次，数一数两人在同一片诗语土壤里各自种下了什么。</p>
+      <p>本卷所据，是三份表格：李白与杜甫各自的逐句语料，以及一份由字符重合度筛出的「李杜句对」候选表，共 <span class="num" data-num="pairCount">23,448</span> 组。它们不是文学结论，只是路标：告诉我们在哪里值得停下来多看一眼。</p>
+      <p>因此这里不做判定，只做陈列。看数字如何把「飘逸」与「沉郁」这两个说惯了的词，还原成一串可以核对的差异。</p>
+    </div>
+
+    <div class="preface-sign reveal">
+      <span>是为卷首</span>
+      <div class="seal seal--sm"><span>詩語</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 卷二 量 -->
+<section class="chapter" id="measure">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">卷二</span>
+      <div class="chapter-title-block">
+        <h2 class="chapter-title">量</h2>
+        <div class="chapter-title-line"></div>
+      </div>
+      <p class="chapter-lead">
+        先看体量。杜甫传世之作比李白多出三成，字数多出两万七千；但两人的<em>平均句长</em>，
+        却意外地几乎相等——一个以五言为主的世界，谁也没能走得更远。
+      </p>
+    </div>
+
+    <div class="stat-grid reveal" id="statGrid"></div>
+
+    <div class="stat-note reveal">
+      <div class="note-item">
+        <strong>多出来的三成</strong>
+        杜甫多出的 336 首诗，并未带来更长的句子。平均句长 5.34 与 5.41，只差 0.07 字——五言的引力场，两人都没能真正离开。
+      </div>
+      <div class="note-item">
+        <strong>更宽的字盘</strong>
+        杜甫动用了 4,290 个不同的字，比李白多出 802 个。字盘越宽，通常意味著题材越杂：吏治、农事、疾病、器物，都往诗里挤。
+      </div>
+      <div class="note-item">
+        <strong>一句话的边界</strong>
+        两人平均每首 13.5 与 13.7 句，听起来几乎一样；但把篇幅结构摊开（见卷五），差别立刻显形。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 卷三 字 -->
+<section class="chapter" id="characters">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">卷三</span>
+      <div class="chapter-title-block">
+        <h2 class="chapter-title">字</h2>
+        <div class="chapter-title-line"></div>
+      </div>
+      <p class="chapter-lead">
+        字频是一个人下意识的呼吸。两张字云里，「不」与「人」都排在最前——
+        唐人写诗，最常写的其实是否定与人。往下再读，分歧才开始。
+      </p>
+    </div>
+
+    <div class="cloud-grid">
+      <div class="cloud-card paper-card reveal">
+        <header>
+          <h3>李白</h3>
+          <span>77,298 字 · 3,488 个不同的字</span>
+        </header>
+        <div class="cloud lb" id="cloudLb"></div>
+        <div class="cloud-foot"><span>字号＝出现次数</span><b id="lbTop"></b></div>
+      </div>
+      <div class="cloud-card paper-card reveal d1">
+        <header>
+          <h3>杜甫</h3>
+          <span>104,696 字 · 4,290 个不同的字</span>
+        </header>
+        <div class="cloud df" id="cloudDf"></div>
+        <div class="cloud-foot"><span>字号＝出现次数</span><b id="dfTop"></b></div>
+      </div>
+    </div>
+
+    <div class="stat-note reveal" style="margin-top:clamp(34px,4vw,52px)">
+      <div class="note-item">
+        <strong>李白的高处是「天」</strong>
+        天 634 次、山 563、云 561——他惯于把视线抬起来，让句子往高处走。
+      </div>
+      <div class="note-item">
+        <strong>杜甫的高处是「日」与「江」</strong>
+        日 593、江 564、风 570——他的镜头更贴著地面与水面，日子与江水都是要一天天熬过去的东西。
+      </div>
+      <div class="note-item">
+        <strong>共同的底色</strong>
+        白、不、何、一、相、来、君——这些字在两张字云里都靠前。唐诗的公共词汇，先于诗人的个性存在。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 卷四 象 -->
+<section class="chapter" id="imagery">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">卷四</span>
+      <div class="chapter-title-block">
+        <h2 class="chapter-title">象</h2>
+        <div class="chapter-title-line"></div>
+      </div>
+      <p class="chapter-lead">
+        意象的偏爱，比字频更接近诗人的性情。下图按<em>每千字出现次数</em>折算——
+        只有折算过，才能公平地比：杜甫写得多，却不一定写得密。
+      </p>
+    </div>
+
+    <div class="imagery-head reveal">
+      <span>每千字出现次数</span>
+      <div class="lg">
+        <span class="a"><i></i>李白</span>
+        <span class="b"><i></i>杜甫</span>
+      </div>
+    </div>
+    <div class="imagery-list reveal" id="imageryList"></div>
+
+    <div class="imagery-note reveal">
+      <p><span class="hl">月 6.2 : 2.2</span>　李白笔下的月，密度是杜甫的近三倍。月亮在他那里是可邀可问的对象；在杜甫那里，更多是夜里的一个背景。</p>
+      <p><span class="hl">江 3.0 : 5.4</span>　反过来，「江」属于杜甫。三峡、夔州、草堂，他的中年以后几乎是被水推著走的。</p>
+      <p><span class="hl">剑 18 : 0</span>　全站最锋利的一组数字：李白写「剑」18 次（每千字 0.2），杜甫 0 次。任侠与书生，不需要论证。</p>
+      <p><span class="hl">老 375 : 74，病 162 : 8</span>　杜甫写「老」的密度是李白的近四倍，写「病」是十五倍。身体，是他诗里无法绕开的坐标。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 卷五 律 -->
+<section class="chapter" id="meter">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">卷五</span>
+      <div class="chapter-title-block">
+        <h2 class="chapter-title">律</h2>
+        <div class="chapter-title-line"></div>
+      </div>
+      <p class="chapter-lead">
+        句子的长短只是表皮，一首诗由几句组成，才见章法的性格。
+        把每首诗的句数点出来，两人的形状立刻不同：杜甫把超过一半的诗，都压进了八句。
+      </p>
+    </div>
+
+    <div class="meter-wrap">
+      <div class="meter-card paper-card reveal" data-poet="lb">
+        <h3>李白 · 句长</h3>
+        <div class="sub">共 14,469 句</div>
+        <div class="slips"></div>
+      </div>
+      <div class="meter-card paper-card reveal d1" data-poet="df">
+        <h3>杜甫 · 句长</h3>
+        <div class="sub">共 19,347 句</div>
+        <div class="slips"></div>
+      </div>
+    </div>
+
+    <div class="paper-card reveal" style="margin-top:clamp(20px,3vw,32px);padding:clamp(22px,3vw,34px)">
+      <div class="micro-label">每首诗由几句组成</div>
+      <div class="spread-legend"><span class="a">■ 李白</span><span class="b">■ 杜甫</span><span style="margin-left:auto">首</span></div>
+      <div class="spread-chart"><div class="spread-rows" id="spreadRows"></div></div>
+    </div>
+
+    <p class="meter-note reveal">
+      八句一诗是律诗的体格。杜甫有 <span class="num">791</span> 首诗恰好八句，占其全部诗作的 56%；
+      李白只有 <span class="num">277</span> 首，占 26%。相反，四句的绝句李白有 192 首、杜甫 135 首。
+      换句话说：李白更常一阵风写完就走，杜甫更常把自己按进格律的框子里，反复打磨中间两联。
+      五言与七言的比例，两人却都停在七成七与两成之间——<em>同样的字数偏好，截然不同的篇幅习惯</em>。
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ 卷六 逢 -->
+<section class="chapter" id="encounter">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">卷六</span>
+      <div class="chapter-title-block">
+        <h2 class="chapter-title">逢</h2>
+        <div class="chapter-title-line"></div>
+      </div>
+      <p class="chapter-lead">
+        两人相差十一岁，一生只见过寥寥数面，却在最日常的两字词里频繁相逢。
+        下图统计的是：在句对候选表中，「同一个两字词」被多少组句对同时支持。
+      </p>
+    </div>
+
+    <div class="term-list reveal" id="termList"></div>
+
+    <div class="star-intro" style="margin-top:clamp(44px,6vw,80px)">
+      <div class="reveal">
+        <div class="micro-label">一词 · 三句 · 两端</div>
+        <h3 style="font-family:var(--kai);font-size:26px;letter-spacing:.14em;margin:0 0 12px">诗语相逢图</h3>
+        <p style="font-size:14px;line-height:2.1;color:var(--ink-soft);margin:0">
+          中央是两人共用的词，左侧引李白原句，右侧引杜甫原句。
+          点一颗节点，下方展开它的出处——这是把「互文」还原成可以逐条核对的句子。
+        </p>
+        <div class="star-detail paper-card" id="starDetail"></div>
+      </div>
+      <div class="star-stage paper-card reveal d1">
+        <div class="search-filters" id="starTabs" style="margin-bottom:10px"></div>
+        <svg class="star-svg" id="starSvg" viewBox="0 0 640 460" role="img" aria-label="诗语相逢图"></svg>
+        <div class="cap">李白 · 共用的两字词 · 杜甫</div>
+      </div>
+    </div>
+
+    <div class="stat-note reveal" style="margin-top:44px">
+      <div class="note-item">
+        <strong>不是抄袭，是土壤</strong>
+        这 23,448 组句对是按字符重合度机械筛出的候选，并非判定「化用」。其中 2,154 组有三字以上重合，仅 2 组整句完全相同（「百里见秋毫。」）。
+      </div>
+      <div class="note-item">
+        <strong>万里、白发、萧萧</strong>
+        排在最前的词，多与远行、衰老、风声有关。唐人共用的一套抒情零件，被两人各自装配成了不同的机器。
+      </div>
+      <div class="note-item">
+        <strong>「路难」与「别离」</strong>
+        李白写「行路难」，杜甫写「别离」——同样是困境，一个向外抗争，一个向内承受。
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ 过场 · 山河 -->
+<section class="interlude" aria-label="诗句对望">
+  <div class="int-bg"></div>
+  <div class="int-inner">
+    <div class="int-side">
+      <span class="int-tag">李白 · 渡荆门送别</span>
+      <div class="int-verse">山随平野尽，江入大荒流。</div>
+    </div>
+    <div class="int-seal"><div class="seal seal--sm"><span>雙曜</span></div></div>
+    <div class="int-side right">
+      <span class="int-tag">杜甫 · 旅夜书怀</span>
+      <div class="int-verse">星垂平野阔，月涌大江流。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 卷七 对读 -->
+<section class="chapter" id="reading">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">卷七</span>
+      <div class="chapter-title-block">
+        <h2 class="chapter-title">对读</h2>
+        <div class="chapter-title-line"></div>
+      </div>
+      <p class="chapter-lead">
+        从三字以上重合的句对里，挑出可以并置阅读的一百余组。
+        左右两栏，红字是两句共享的字——它们往往正是诗意的接榫处。
+      </p>
+    </div>
+
+    <div class="card-toolbar reveal">
+      <span class="hint">已选 <b id="cardCount">12</b> 组 / 共 2,154 组三字以上重合</span>
+      <button class="btn-ink" id="shuffleBtn">换 一 批</button>
+    </div>
+    <div class="pair-grid reveal" id="pairGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================ 卷八 检索 -->
+<section class="chapter" id="search">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">卷八</span>
+      <div class="chapter-title-block">
+        <h2 class="chapter-title">检</h2>
+        <div class="chapter-title-line"></div>
+      </div>
+      <p class="chapter-lead">
+        最后，把整座语料交还给读者。输入一个字或一个词，
+        在两人的两千四百余首诗里，看它落在何处。
+      </p>
+    </div>
+
+    <div class="search-box reveal">
+      <input type="search" id="q" placeholder="试试：月、酒、白发、秋风、故乡……" autocomplete="off" aria-label="检索诗句">
+      <span class="kbd">ENTER</span>
+    </div>
+    <div class="search-filters reveal" id="searchFilters">
+      <button class="chip on" data-who="all">全部</button>
+      <button class="chip" data-who="李白">李白</button>
+      <button class="chip" data-who="杜甫">杜甫</button>
+    </div>
+    <div class="search-results reveal" id="results">
+      <div class="search-empty">输入字词，开始检索</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 尾声 -->
+<footer class="colophon">
+  <div class="wrap colophon-grid">
+    <div class="reveal">
+      <h2>卷末</h2>
+      <div class="note">
+        <p style="margin-top:0">数字不会替诗人作证，但能让我们把偏爱暂时放下。<br>两座高峰并不相让，只是形状不同。</p>
+        <dl>
+          <dt>数据</dt>
+          <dd>李白逐句表 14,469 行、杜甫逐句表 19,347 行、李杜句对候选表 23,448 行；均来自本项目所附三份 CSV。</dt>
+          <dt>指标</dt>
+          <dd>字数以句为单位累加，含标点；句长、字频、意象密度、篇幅分布与两字词支持数，均由原始语料现算，无外部来源。</dt>
+          <dt>插图</dt>
+          <dd>首屏与两幅立轴为 AI 生成水墨，仅作氛围之用，非史料图像。</dd>
+          <dt>技术</dt>
+          <dd>纯静态 HTML / CSS / JavaScript，无框架、无外部依赖、无需建置，可直接部署于 GitHub Pages。</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="reveal d1">
+      <div style="display:flex;justify-content:flex-end;margin-top:8px">
+        <div class="seal"><span>雙曜</span></div>
+      </div>
+      <img class="colophon-bamboo" src="assets/img/bamboo.png" alt="" loading="lazy">
+      <div class="colophon-seal">
+        <div class="txt">
+          卷一至卷八 · 数字人文习作<br>
+          二〇二六年 冬
+        </div>
+      </div>
+      <div style="text-align:right;margin-top:24px;font-size:12px;letter-spacing:.16em;color:var(--ink-faint)">
+        <a href="#preface" style="color:var(--cinnabar)">回到卷首 ↑</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="data/site-data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
